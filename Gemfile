@@ -5,3 +5,4 @@ gem 'activerecord', require: 'active_record'
 gem "sinatra"
 gem "sqlite3"
 gem "sinatra-activerecord"
+gem "paperclip"
