@@ -7,7 +7,7 @@ Bundler.require
 # )
 
 require "sinatra/activerecord"
-config.active_record.raise_in_transactional_callbacks = true
+# config.active_record.raise_in_transactional_callbacks = true
 # set :database, {adapter: "sqlite3", database: "db/soundifyerly.sqlite3"}
 
 # $LOAD_PATH
