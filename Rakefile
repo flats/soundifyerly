@@ -1,5 +1,10 @@
 require "sinatra/activerecord/rake"
 
+task :console do
+  Pry.start
+  # require_relative('config/environment')
+end
+
 namespace :db do
   task :load_config do
     Dir["app/models/*.rb"].each { |f| require f }
