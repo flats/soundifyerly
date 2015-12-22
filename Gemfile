@@ -6,3 +6,4 @@ gem 'activerecord', require: 'active_record'
 gem "sinatra", require: 'sinatra/base'
 gem "sinatra-activerecord"
 gem "paperclip"
+gem "pry"
