@@ -1,5 +1,7 @@
 class CreateSounds < ActiveRecord::Migration
   def change
-    t.string :title
+    create_table :sounds do |t|
+      t.string :title
+    end
   end
 end
