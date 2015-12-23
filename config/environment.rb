@@ -9,7 +9,8 @@ Bundler.require
 require "sinatra/activerecord"
 # config.active_record.raise_in_transactional_callbacks = true
 # set :database, {adapter: "sqlite3", database: "db/soundifyerly.sqlite3"}
-
+ActiveRecord::Base.logger = Logger.new(STDOUT)
+ActiveRecord::Base.raise_in_transactional_callbacks = true
 # $LOAD_PATH
 $: << '.'
 Dir["app/models/*.rb"].each { |f| require f }

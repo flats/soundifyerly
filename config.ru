@@ -9,9 +9,9 @@ map "/" do
 end
 
 map "/users" do
-  run CocktailsController.new
+  run UsersController.new
 end
 
 map "/sounds" do
-  run IngredientsController.new
+  run SoundsController.new
 end
