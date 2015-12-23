@@ -13,3 +13,4 @@ require "sinatra/activerecord"
 # $LOAD_PATH
 $: << '.'
 Dir["app/models/*.rb"].each { |f| require f }
+Dir["app/controllers/*.rb"].each { |f| require f }

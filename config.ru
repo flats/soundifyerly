@@ -1,6 +1,17 @@
 require_relative 'config/environment'
-Dir["app/controllers/*.rb"].each { |f| require f }
+
+# use IndexController
+# run ApplicationController
+# above checks these controllers in order
 
 map "/" do
-  run UsersController.new
+  run HomeController.new
+end
+
+map "/users" do
+  run CocktailsController.new
+end
+
+map "/sounds" do
+  run IngredientsController.new
 end
