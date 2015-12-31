@@ -1,11 +1,21 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <title>Soundifyerly 4 UR EARZ</title>
+  <meta charset="utf-8">
+  <title>Soundifyerly 4 UR EARZ</title>
+  <link rel="stylesheet" href="/css/normalize.css">
+  <link rel="stylesheet" href="/css/skeleton.css">
 </head>
 <body>
-    <h1>Welcome to Soundifyerly</h1>
-    <%= yield %>
+  <div class="container">
+    <div class="row">
+      <h1>Welcome to Soundifyerly</h1>
+    </div>
+    <div class="row">
+      <div class="one-half column">
+        <%= yield %>
+      </div>
+    </div>
+  </div>
 </body>
 </html>
