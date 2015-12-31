@@ -1,5 +1,5 @@
 <h2><%= @sound.title %></h2>
-<h3><%= @sound.soundfile.rpartition(/\.[^.]*/)[0] %></h3>
+<h3><a href="/<%= sound.public_file_path %>"><%= sound.soundfile %></a></h3>
 <ul>
     <li><a href="/sounds/<%= @sound.id %>/edit">Edit <%= @sound.title %></a></li>
     <li>

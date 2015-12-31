@@ -1,7 +1,10 @@
 require_relative 'config/environment'
 
-# use IndexController
+# use HomeController
+# use SoundsController
+# use UsersController
 # run ApplicationController
+
 # above checks these controllers in order
 
 map "/" do

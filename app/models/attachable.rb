@@ -10,6 +10,10 @@ module Attachable
     UPLOAD_DIR + id_partition + "/".freeze + self.soundfile
   end
 
+  def public_file_path
+    UPLOAD_DIR.gsub("public/", "") + id_partition + "/".freeze + self.soundfile
+  end
+
   def write_attached_file(tempfile:)
     make_directories
     File.open(file_path, "w") do |f|

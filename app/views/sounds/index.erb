@@ -9,8 +9,8 @@
     <tbody>
         <% @sounds.each do |sound| %>
         <tr>
-            <td><a href="<%= sound.id %>"><%= sound.title %></a></td>
-            <td><a href="/<%= sound.file_path %>"><%= sound.soundfile %></td>
+            <td><a href="/sounds/<%= sound.id %>"><%= sound.title %></a></td>
+            <td><a href="/<%= sound.public_file_path %>"><%= sound.soundfile %></a></td>
         </tr>
         <% end %>
     </tbody>
