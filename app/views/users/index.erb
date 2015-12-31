@@ -1,0 +1,22 @@
+<% unless @users.empty? %>
+<table>
+    <thead>
+        <tr>
+            <th>Username</th>
+            <th>Real Name</th>
+            <th>Bio</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% @users.each do |user| %>
+        <tr>
+            <td><a href="/users/<%= user.username %>"><%= user.username %></a></td>
+            <td><%= user.real_name %></td>
+            <td><%= user.bio %></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
+<% else %>
+<h2>There are no users. <a href="/users/new">Create a user</a>.
+<% end %>

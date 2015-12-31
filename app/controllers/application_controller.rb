@@ -5,5 +5,7 @@ class ApplicationController < Sinatra::Base
   enable :static
   configure :production, :development do
     enable :logging
+    enable :sessions
+    set :session_secret, "n6s2dHwPdj2fgF1m"
   end
 end
