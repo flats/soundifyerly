@@ -1,5 +1,14 @@
 <p>
-    <a href="/users/<%= user.username %>"><%= user.username %></a><br>
-    <%= user.real_name %><br>
-    <%= user.bio %>
+    Username: <%= @user.username %><br>
+    Real Name: <%= @user.real_name %><br>
+    Bio: <%= @user.bio %>
 </p>
+<ul>
+    <li><a href="/users/<%= @user.username %>/edit">Edit <%= @user.username %></a></li>
+    <li>
+        <form action="/users/<%= @user.username %>" method="post">
+            <input type="hidden" name="_method" value="delete">
+            <input type="submit" name="" value="Delete this user">
+        </form>
+    </li>
+</ul>
