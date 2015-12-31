@@ -1,0 +1,6 @@
+<h2>Edit <%= @sound.title %>.</h2>
+<form action="/sounds/<%= @sound.id %>" method="post" accept-charset="utf-8" enctype="multipart/form-data">
+    <input type="text" name="sound[title]" value="<%= @sound.title %>">
+    <input type="file" name="sound[soundfile]">
+    <input type="submit" name="" value="Me Hungry for Sounds">
+</form>

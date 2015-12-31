@@ -6,7 +6,7 @@ Bundler.require
 #   database: "db/get_crunked_development.db"
 # )
 
-require "sinatra/activerecord"
+# require "sinatra/activerecord"
 
 # config.active_record.raise_in_transactional_callbacks = true
 # set :database, {adapter: "sqlite3", database: "db/soundifyerly.sqlite3"}
@@ -20,4 +20,4 @@ $: << '.'
 Dir["app/models/*.rb"].each { |f| require f }
 Dir["app/controllers/*.rb"].each { |f| require f }
 
-UPLOAD_DIR = 'uploads/'
+UPLOAD_DIR = 'public/system/uploads/'

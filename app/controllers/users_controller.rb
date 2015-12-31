@@ -1,14 +1,23 @@
-class UsersController
-  def call(env)
-    request = Rack::Request.new(env)
-    if request.path == "/" && request.get?
-      index
+class UsersController < ApplicationController
+  get '/' do
+    "index"
+  end
+
+  get '/new' do
+    erb :'users/create'
+  end
+
+  get '/edit/:username' do
+    @user = User.find_by(username: params[:username])
+    if @sound
+      erb :'users/edit'
     else
-      Rack::Response.new("File not found", 404)
+      404
     end
   end
 
-  def index
-    Rack::Response.new("<a href='/users'>Users</a>")
+  get '/:username' do
+    @user = User.find_by(username: params[:username])
+    erb :'users/show'
   end
 end

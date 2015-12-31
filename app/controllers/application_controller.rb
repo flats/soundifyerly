@@ -1,9 +1,8 @@
 class ApplicationController < Sinatra::Base
-  # just settings in here - could add generic routes in here
   enable :method_override
-  # app_dir = File.dirname(__FILE__)
-  # set :root, File.join(app_dir, "..")
-  set :root, File.join(__dir__, "..")
+  set :root, File.dirname(File.expand_path('..', __FILE__))
+  set :public_folder, Proc.new { File.join(File.expand_path('.', "public")) }
+  enable :static
   configure :production, :development do
     enable :logging
   end

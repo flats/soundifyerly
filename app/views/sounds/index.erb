@@ -1,0 +1,20 @@
+<% unless @sounds.empty? %>
+<table>
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Soundfile</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% @sounds.each do |sound| %>
+        <tr>
+            <td><a href="<%= sound.id %>"><%= sound.title %></a></td>
+            <td><a href="/<%= sound.file_path %>"><%= sound.soundfile %></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
+<% else %>
+<h2>You don't have any sounds yet. <a href="/sounds/new">Upload a sound</a>.
+<% end %>

@@ -16,27 +16,11 @@ GEM
       tzinfo (~> 1.1)
     arel (6.0.3)
     builder (3.2.2)
-    climate_control (0.0.3)
-      activesupport (>= 3.0)
-    cocaine (0.5.8)
-      climate_control (>= 0.0.3, < 1.0)
     coderay (1.1.0)
     i18n (0.7.0)
     json (1.8.3)
     method_source (0.8.2)
-    mime-types (3.0)
-      mime-types-data (~> 3.2015)
-    mime-types-data (3.2015.1120)
-    mimemagic (0.3.0)
     minitest (5.8.3)
-    paperclip (4.3.2)
-      activemodel (>= 3.2.0)
-      activesupport (>= 3.2.0)
-      cocaine (~> 0.5.5)
-      mime-types
-      mimemagic (= 0.3.0)
-    paperclip-rack (0.0.2)
-      paperclip (>= 3.0)
     pry (0.10.3)
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
@@ -63,8 +47,6 @@ PLATFORMS
 
 DEPENDENCIES
   activerecord
-  paperclip
-  paperclip-rack
   pry
   sinatra
   sinatra-activerecord
