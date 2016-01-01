@@ -1,6 +1,6 @@
 class SoundsController < ApplicationController
   include Userable
-  
+
   get '/' do
     @sounds = Sound.all
     erb :'sounds/index'
@@ -11,8 +11,10 @@ class SoundsController < ApplicationController
   end
 
   post '/' do
-    @sound = Sound.create(title: params[:sound][:title], soundfile: "#{params[:sound][:soundfile][:filename]}")
-    @sound.write_attached_file(tempfile: params[:sound][:soundfile][:tempfile])
+    if logged_in?
+      @sound = Sound.create(title: params[:sound][:title], soundfile: "#{params[:sound][:soundfile][:filename]}")
+      @sound.write_attached_file(tempfile: params[:sound][:soundfile][:tempfile])
+    end
     # TODO: check for write success - maybe use return value, which is file
     # size in bytes? Maybe use File.exists?
     redirect "/sounds/#{@sound.id}"
