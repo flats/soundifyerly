@@ -7,17 +7,25 @@ class SoundsController < ApplicationController
   end
 
   get '/new' do
-    erb :'sounds/create'
+    if logged_in?
+      erb :'sounds/create'
+    else
+      flash[:alert] = "You have to log in before creating a sound."
+      redirect '/users/login'
+    end
   end
 
   post '/' do
     if logged_in?
       @sound = Sound.create(title: params[:sound][:title], soundfile: "#{params[:sound][:soundfile][:filename]}")
       @sound.write_attached_file(tempfile: params[:sound][:soundfile][:tempfile])
+      redirect "/sounds/#{@sound.id}"
+    else
+      flash[:alert] = "You have to log in before creating a sound."
+      redirect '/users/login'
     end
     # TODO: check for write success - maybe use return value, which is file
     # size in bytes? Maybe use File.exists?
-    redirect "/sounds/#{@sound.id}"
   end
 
   get '/:id' do

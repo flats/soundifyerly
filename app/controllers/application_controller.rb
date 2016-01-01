@@ -1,4 +1,6 @@
 class ApplicationController < Sinatra::Base
+  register Sinatra::ActiveRecordExtension
+  register Sinatra::Flash
   enable :method_override
   set :root, File.dirname(File.expand_path('..', __FILE__))
   set :public_folder, Proc.new { File.join(File.expand_path('.', "public")) }

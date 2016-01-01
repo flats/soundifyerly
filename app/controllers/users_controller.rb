@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   include Userable
-  
+
   get '/' do
     @users = User.all
     erb :'users/index'
@@ -33,7 +33,7 @@ class UsersController < ApplicationController
   end
 
   get "/login" do
-    erb :login
+    erb :'users/login'
   end
 
   post "/login" do
