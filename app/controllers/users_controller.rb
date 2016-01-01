@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  include Userable
+  
   get '/' do
     @users = User.all
     erb :'users/index'
@@ -79,13 +81,13 @@ class UsersController < ApplicationController
     end
   end
 
-  helpers do
-    def logged_in?
-      !!session[:id]
-    end
+  # helpers do
+  #   def logged_in?
+  #     !!session[:id]
+  #   end
 
-    def current_user
-      User.find(session[:id])
-    end
-  end
+  #   def current_user
+  #     User.find(session[:id])
+  #   end
+  # end
 end

@@ -1,4 +1,6 @@
 class SoundsController < ApplicationController
+  include Userable
+  
   get '/' do
     @sounds = Sound.all
     erb :'sounds/index'
@@ -60,13 +62,13 @@ class SoundsController < ApplicationController
     'File not found'
   end
 
-  helpers do
-    # def logged_in?
-    #   !!session[:id]
-    # end
+  # helpers do
+  #   def logged_in?
+  #     !!session[:id]
+  #   end
 
-    # def current_user
-    #   User.find(session[:id])
-    # end
-  end
+  #   def current_user
+  #     User.find(session[:id])
+  #   end
+  # end
 end
