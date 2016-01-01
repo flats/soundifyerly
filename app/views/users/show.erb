@@ -1,14 +1,12 @@
 <p>
-    Username: <%= @user.username %><br>
-    Real Name: <%= @user.real_name %><br>
-    Bio: <%= @user.bio %>
+  Username: <%= @user.username %><br>
+  Real Name: <%= @user.real_name %><br>
+  Bio: <%= @user.bio %>
 </p>
-<ul>
-    <li><a href="/users/<%= @user.username %>/edit">Edit <%= @user.username %></a></li>
-    <li>
-        <form action="/users/<%= @user.username %>" method="post">
-            <input type="hidden" name="_method" value="delete">
-            <input type="submit" name="" value="Delete this user">
-        </form>
-    </li>
-</ul>
+<p id="user-actions">
+  <a href="/users/<%= @user.username %>/edit">Edit <%= @user.username %></a><br>
+  <form action="/users/<%= @user.username %>" method="post">
+      <input type="hidden" name="_method" value="delete">
+      <input type="submit" name="" value="Delete this user">
+  </form>
+</p>

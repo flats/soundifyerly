@@ -416,3 +416,10 @@ there.
 
 /* Larger than Desktop HD */
 @media (min-width: 1200px) {}
+
+/* Custom Styles for Soundifyerly
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+form input[type="submit"] {
+  display: block;
+}
