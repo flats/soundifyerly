@@ -19,6 +19,8 @@ class SoundsController < ApplicationController
     if logged_in?
       @sound = Sound.create(title: params[:sound][:title], soundfile: "#{params[:sound][:soundfile][:filename]}")
       @sound.write_attached_file(tempfile: params[:sound][:soundfile][:tempfile])
+      @sound.user = User.find(current_user.id)
+      @sound.save
       redirect "/sounds/#{@sound.id}"
     else
       flash[:alert] = "You have to log in before creating a sound."
