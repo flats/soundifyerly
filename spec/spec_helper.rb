@@ -1,5 +1,5 @@
-ENV["SINATRA_ENV"] = "test"
-
+# ENV["SINATRA_ENV"] = "test"
+ENV["RACK_ENV"] = "test"
 require_relative '../config/environment'
 require 'capybara/rspec'
 require 'capybara/dsl'

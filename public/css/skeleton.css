@@ -422,6 +422,10 @@ there.
 
 h1#site-title {
   margin-top: .5em;
+  background: transparent url(../images/soundifyerly-logo.png) center left no-repeat;
+  background-size: 50px;
+  padding-left: 60px;
+  min-height: 60px;
 }
 
 h1#site-title a {
