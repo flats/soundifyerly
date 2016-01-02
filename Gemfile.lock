@@ -18,6 +18,7 @@ GEM
     bcrypt (3.1.10)
     builder (3.2.2)
     coderay (1.1.0)
+    diff-lcs (1.2.5)
     i18n (0.7.0)
     json (1.8.3)
     method_source (0.8.2)
@@ -29,6 +30,19 @@ GEM
     rack (1.6.4)
     rack-protection (1.5.3)
       rack
+    rspec (3.4.0)
+      rspec-core (~> 3.4.0)
+      rspec-expectations (~> 3.4.0)
+      rspec-mocks (~> 3.4.0)
+    rspec-core (3.4.1)
+      rspec-support (~> 3.4.0)
+    rspec-expectations (3.4.0)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.4.0)
+    rspec-mocks (3.4.0)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.4.0)
+    rspec-support (3.4.1)
     sinatra (1.4.6)
       rack (~> 1.4)
       rack-protection (~> 1.4)
@@ -52,6 +66,7 @@ DEPENDENCIES
   activerecord
   bcrypt
   pry
+  rspec
   sinatra
   sinatra-activerecord
   sinatra-flash
