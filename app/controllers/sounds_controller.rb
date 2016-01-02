@@ -2,7 +2,7 @@ class SoundsController < ApplicationController
   include Userable
 
   get '/' do
-    @sounds = Sound.include(:user).all
+    @sounds = Sound.includes(:user).all
     erb :'sounds/index'
   end
 

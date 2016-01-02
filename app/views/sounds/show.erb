@@ -1,10 +1,9 @@
-<h2>Sounds</h2>
 <h2><%= @sound.title %></h2>
 <h3><a href="/<%= @sound.public_file_path %>"><%= @sound.soundfile %></a></h3>
-<p id="sound-actions">
-  <a href="/sounds/<%= @sound.id %>/edit">Edit <%= @sound.title %></a><br>
-    <form action="/sounds/<%= @sound.id %>" method="post">
-      <input type="hidden" name="_method" value="DELETE">
-      <input type="submit" name="" value="Delete Sound">
+<p class="show-actions">
+  <a href="/sounds/<%= @sound.id %>/edit" class="button-link">Edit <%= @sound.title %></a><br>
+  <form action="/sounds/<%= @sound.id %>" method="post" class="delete-form">
+    <input type="hidden" name="_method" value="DELETE">
+    <input type="submit" name="" value="Delete Sound">
   </form>
 </p>

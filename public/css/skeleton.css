@@ -420,6 +420,53 @@ there.
 /* Custom Styles for Soundifyerly
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 
+h1#site-title a {
+  text-decoration: none;
+  color: #000;
+}
+
+h1#site-title a:hover {
+  color: #000;
+}
+
 form input[type="submit"] {
   display: block;
+}
+
+form.delete-form input[type="submit"], form.edit-form input[type="submit"] {
+  width: 220px;
+}
+
+p.show-actions {
+  margin-bottom: 0;
+}
+
+p.show-actions a.button-link {
+  display: block;
+  height: 38px;
+  padding: 0 30px;
+  color: #555;
+  text-align: center;
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 38px;
+  letter-spacing: .1rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  white-space: nowrap;
+  background-color: transparent;
+  border-radius: 4px;
+  border: 1px solid #bbb;
+  cursor: pointer;
+  box-sizing: border-box;
+  width: 220px;
+}
+
+p.show-actions a.button-link:hover {
+  color: #333;
+  border-color: #888;
+}
+
+p.show-actions form input[type="submit"] {
+  width: 220px;
 }

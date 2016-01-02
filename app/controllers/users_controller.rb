@@ -84,4 +84,8 @@ class UsersController < ApplicationController
       404
     end
   end
+
+  error 404 do
+    'File not found'
+  end
 end

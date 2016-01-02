@@ -1,9 +1,15 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Index</title>
-</head>
-<body>
+<a href="/sounds">Browse all sounds</a><br>
+<a href="/users/new">Create an account</a><br>
+<a href="/users/login">Log into your account</a><br>
 
-</body>
-</html>
+<% if logged_in? %>
+<br>
+<h4>Welcome, <%= current_user.real_name %>!</h4>
+<a href="/users/<%= current_user.username %>">Your account &amp; sounds</a><br>
+<a href="/sounds/new">Create a sound</a><br>
+<a href="/users/logout">Log out of your account</a><br>
+<% end %>
+
+<br>
+<h4>Administration</h4>
+<a href="/users">Browse and edit users</a><br>

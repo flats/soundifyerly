@@ -6,14 +6,18 @@
 </p>
 <ul id="user-sound-list">
 <h3>Your Sounds</h3>
-<% @user.sounds.each do |sound| %>
-  <li><%= sound.title %>: <a href="/<%= sound.public_file_path %>"><%= sound.soundfile %></a></li>
+<% if @user.sounds.empty? %>
+  <p>You don't have any sounds yet. <a href="/sounds/create">Create a sound</a>.</p>
+<% else %>
+  <% @user.sounds.each do |sound| %>
+    <li><%= sound.title %>: <a href="/<%= sound.public_file_path %>"><%= sound.soundfile %></a></li>
+  <% end %>
 <% end %>
 </ul>
-<p id="user-actions">
-  <a href="/users/<%= @user.username %>/edit">Edit <%= @user.username %></a><br>
-  <form action="/users/<%= @user.username %>" method="post">
+<p class="show-actions">
+  <a href="/users/<%= @user.username %>/edit" class="button-link">Edit your account</a><br>
+  <form action="/users/<%= @user.username %>" method="post" class="delete-form">
       <input type="hidden" name="_method" value="delete">
-      <input type="submit" name="" value="Delete this user">
+      <input type="submit" name="" value="Delete your account">
   </form>
 </p>
