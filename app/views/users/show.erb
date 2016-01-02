@@ -4,6 +4,12 @@
   Real Name: <%= @user.real_name %><br>
   Bio: <%= @user.bio %>
 </p>
+<ul id="user-sound-list">
+<h3>Your Sounds</h3>
+<% @user.sounds.each do |sound| %>
+  <li><%= sound.title %>: <a href="/<%= sound.public_file_path %>"><%= sound.soundfile %></a></li>
+<% end %>
+</ul>
 <p id="user-actions">
   <a href="/users/<%= @user.username %>/edit">Edit <%= @user.username %></a><br>
   <form action="/users/<%= @user.username %>" method="post">

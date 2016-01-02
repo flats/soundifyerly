@@ -52,7 +52,7 @@ class UsersController < ApplicationController
   end
 
   get '/:username' do
-    @user = User.find_by(username: params[:username])
+    @user = User.includes(:sounds).find_by(username: params[:username])
     erb :'users/show'
   end
 
