@@ -1,5 +1,5 @@
 class AddSoundfileToSound < ActiveRecord::Migration
   def change
-    add_attachment :sounds, :soundfile
+    # add_attachment :sounds, :soundfile
   end
 end
