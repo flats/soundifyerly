@@ -6,6 +6,7 @@
             <th>User</th>
             <th>Title</th>
             <th>Soundfile</th>
+            <th>MIME Type</th>
             <th>Play Sound</th>
         </tr>
     </thead>
@@ -15,9 +16,10 @@
             <td><a href="/users/<%= sound.user.username %>"><%= sound.user.username %></a></td>
             <td><a href="/sounds/<%= sound.id %>"><%= sound.title %></a></td>
             <td><a href="/<%= sound.public_file_path %>"><%= sound.soundfile %></a></td>
+            <td><%= sound.mime_type %></td>
             <td>
                 <audio controls>
-                    <source src="/<%= sound.public_file_path %>" type="audio/mpeg"/>
+                    <source src="/<%= sound.public_file_path %>" type="<%= sound.mime_type %>"/>
                 </audio>
             </td>
         </tr>

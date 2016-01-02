@@ -25,6 +25,10 @@ module Attachable
     File.delete(file_path) if File.exist?(file_path)
   end
 
+  def mime_type
+    `file --brief --mime-type #{self.file_path}`.strip
+  end
+
   private
   def make_directories
     FileUtils.mkdir_p(UPLOAD_DIR + id_partition)
