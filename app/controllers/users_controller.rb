@@ -53,7 +53,11 @@ class UsersController < ApplicationController
 
   get '/:username' do
     @user = User.includes(:sounds).find_by(username: params[:username])
-    erb :'users/show'
+    if @user
+      erb :'users/show'
+    else
+      404
+    end
   end
 
   post '/:username' do
