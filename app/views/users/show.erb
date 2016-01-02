@@ -7,7 +7,7 @@
 <ul id="user-sound-list">
 <h3>Your Sounds</h3>
 <% if @user.sounds.empty? %>
-  <p>You don't have any sounds yet. <a href="/sounds/create">Create a sound</a>.</p>
+  <p>You don't have any sounds yet. <a href="/sounds/new">Create a sound</a>.</p>
 <% else %>
   <% @user.sounds.each do |sound| %>
     <li><%= sound.title %>: <a href="/<%= sound.public_file_path %>"><%= sound.soundfile %></a></li>
