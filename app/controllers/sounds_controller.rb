@@ -53,7 +53,7 @@ class SoundsController < ApplicationController
     @sound = Sound.find(params[:id])
     if @sound
       # TODO: add to destroy callback?
-      @sound.delete_attached_file
+      # @sound.delete_attached_file
       @sound.destroy
       redirect '/sounds/'
     else
