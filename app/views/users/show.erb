@@ -7,11 +7,30 @@
 <ul id="user-sound-list">
 <h3>Your Sounds</h3>
 <% if @user.sounds.empty? %>
-  <p>You don't have any sounds yet. <a href="/sounds/new">Create a sound</a>.</p>
+<p>You don't have any sounds yet. <a href="/sounds/new">Create a sound</a>.</p>
 <% else %>
-  <% @user.sounds.each do |sound| %>
-    <li><%= sound.title %>: <a href="/<%= sound.public_file_path %>"><%= sound.soundfile %></a></li>
-  <% end %>
+<table>
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Soundfile</th>
+            <th>Play Sound</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% @user.sounds.each do |sound| %>
+        <tr>
+            <td><a href="/sounds/<%= sound.id %>"><%= sound.title %></a></td>
+            <td><a href="/<%= sound.public_file_path %>"><%= sound.soundfile %></a></td>
+            <td>
+                <audio controls>
+                    <source src="/<%= sound.public_file_path %>" type="audio/mpeg"/>
+                </audio>
+            </td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
 <% end %>
 </ul>
 <p class="show-actions">
