@@ -80,14 +80,4 @@ class UsersController < ApplicationController
       404
     end
   end
-
-  # helpers do
-  #   def logged_in?
-  #     !!session[:id]
-  #   end
-
-  #   def current_user
-  #     User.find(session[:id])
-  #   end
-  # end
 end
