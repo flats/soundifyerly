@@ -7,6 +7,7 @@ gem 'sinatra', require: 'sinatra/base'
 gem 'tilt', require: 'tilt/erb'
 gem 'sinatra-activerecord', require: 'sinatra/activerecord'
 gem 'sinatra-flash', require: 'sinatra/flash'
+gem 'rake'
 gem 'bcrypt'
 
 group :development do

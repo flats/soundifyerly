@@ -1,8 +1,11 @@
+ENV["SINATRA_ENV"] ||= "development"
+
 require_relative 'config/environment'
 require "sinatra/activerecord/rake"
 
 namespace :db do
   task :load_config do
+    Dir["app/concerns/*.rb"].each { |f| require f }
     Dir["app/models/*.rb"].each { |f| require f }
     Dir["app/controllers/*.rb"].each { |f| require f }
   end
