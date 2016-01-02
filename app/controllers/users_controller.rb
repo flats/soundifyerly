@@ -14,7 +14,9 @@ class UsersController < ApplicationController
     user = User.create(username: params[:user][:username], real_name: params[:user][:real_name], password: params[:user][:password], bio: params[:user][:bio])
     if user.save && user.username
       session[:id] = user.id
-      redirect '/users/signup_success'
+      flash[:alert] = "You are now registered."
+      flash[:success] = true
+      redirect "/users/#{user.username}"
     else
       redirect '/users/signup_failure'
     end
@@ -40,9 +42,12 @@ class UsersController < ApplicationController
     user = User.find_by(username: params[:username])
     if user && user.authenticate(params[:password])
       session[:id] = user.id
+      flash[:alert] = "Welcome back, #{user.real_name}!"
+      flash[:success] = true
       redirect "/users/#{user.username}"
     else
-      redirect '/failure'
+      flash[:alert] = "Your username or password was incorrect. Please try again."
+      redirect '/users/login'
     end
   end
 
@@ -63,6 +68,8 @@ class UsersController < ApplicationController
   post '/:username' do
     @user = User.find_by(username: params[:username])
     @user.update(username: params[:user][:username], real_name: params[:user][:real_name], bio: params[:user][:bio])
+    flash[:alert] = "Account details updated."
+    flash[:success] = true
     redirect "/users/#{@user.username}"
   end
 

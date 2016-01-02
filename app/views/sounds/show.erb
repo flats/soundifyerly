@@ -1,14 +1,17 @@
 <h2><%= @sound.title %></h2>
+
 <p class="audio-player">
   <audio controls>
     <source src="/<%= @sound.public_file_path %>" type="audio/mpeg"/>
   </audio>
 </p>
+
 <h3><a href="/<%= @sound.public_file_path %>"><%= @sound.soundfile %></a></h3>
-<p class="show-actions">
+
+<div class="show-actions">
   <a href="/sounds/<%= @sound.id %>/edit" class="button-link">Edit this sound</a><br>
   <form action="/sounds/<%= @sound.id %>" method="post" class="delete-form">
     <input type="hidden" name="_method" value="DELETE">
     <input type="submit" name="" value="Delete this sound">
   </form>
-</p>
+</div>

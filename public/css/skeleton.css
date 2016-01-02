@@ -420,6 +420,10 @@ there.
 /* Custom Styles for Soundifyerly
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 
+h1#site-title {
+  margin-top: .5em;
+}
+
 h1#site-title a {
   text-decoration: none;
   color: #000;
@@ -427,6 +431,14 @@ h1#site-title a {
 
 h1#site-title a:hover {
   color: #000;
+}
+
+h4#flash {
+  color: #ff6347;
+}
+
+h4#flash.success {
+  color: #228b22;
 }
 
 form input[type="submit"] {
@@ -437,11 +449,11 @@ form.delete-form input[type="submit"], form.edit-form input[type="submit"] {
   width: 220px;
 }
 
-p.show-actions {
+div.show-actions {
   margin-bottom: 0;
 }
 
-p.show-actions a.button-link {
+div.show-actions a.button-link {
   display: block;
   height: 38px;
   padding: 0 30px;
@@ -462,11 +474,11 @@ p.show-actions a.button-link {
   width: 220px;
 }
 
-p.show-actions a.button-link:hover {
+div.show-actions a.button-link:hover {
   color: #333;
   border-color: #888;
 }
 
-p.show-actions form input[type="submit"] {
+div.show-actions form input[type="submit"] {
   width: 220px;
 }

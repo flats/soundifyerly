@@ -1,11 +1,9 @@
-<h3>Your Account</h3>
-<p>
-  Username: <%= @user.username %><br>
-  Real Name: <%= @user.real_name %><br>
-  Bio: <%= @user.bio %>
-</p>
-<ul id="user-sound-list">
+<% if flash[:alert] %>
+<h4 id="flash"<%= ' class="success"' if flash[:success] %>><%= flash[:alert] %></h4>
+<% end %>
+
 <h3>Your Sounds</h3>
+
 <% if @user.sounds.empty? %>
 <p>You don't have any sounds yet. <a href="/sounds/new">Create a sound</a>.</p>
 <% else %>
@@ -34,11 +32,20 @@
     </tbody>
 </table>
 <% end %>
-</ul>
-<p class="show-actions">
+
+<h3>Your Account</h3>
+
+<p>
+  Username: <%= @user.username %><br>
+  Real Name: <%= @user.real_name %><br>
+  Bio: <%= @user.bio %>
+</p>
+
+<div class="show-actions">
   <a href="/users/<%= @user.username %>/edit" class="button-link">Edit your account</a><br>
+  <a href="/users/logout" class="button-link">Log out</a><br>
   <form action="/users/<%= @user.username %>" method="post" class="delete-form">
       <input type="hidden" name="_method" value="delete">
       <input type="submit" name="" value="Delete your account">
   </form>
-</p>
+</div>
