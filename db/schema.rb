@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160101225512) do
+ActiveRecord::Schema.define(version: 20160102001938) do
 
   create_table "sounds", force: :cascade do |t|
     t.string  "title"
@@ -26,7 +26,6 @@ ActiveRecord::Schema.define(version: 20160101225512) do
     t.string "real_name"
     t.string "image_url"
     t.text   "bio"
-    t.string "password"
     t.string "password_digest"
   end
 
