@@ -96,10 +96,12 @@
 <% end %>
 
 <div class="show-actions">
-  <a href="/users/<%= @user.username %>/edit" class="button-link">Edit your account</a><br>
+  <% if logged_in? && current_user == @user %>
   <a href="/users/logout" class="button-link">Log out</a><br>
+  <% end %>
+  <a href="/users/<%= @user.username %>/edit" class="button-link">Edit account</a><br>
   <form action="/users/<%= @user.username %>" method="post" class="delete-form">
       <input type="hidden" name="_method" value="delete">
-      <input type="submit" name="" value="Delete your account">
+      <input type="submit" name="" value="Delete account">
   </form>
 </div>
