@@ -1,5 +1,11 @@
 class User < ActiveRecord::Base
   has_many :sounds, inverse_of: :user, dependent: :destroy
+
+  has_many :followers, through: :follower_follows, source: :follower
+  has_many :follower_follows, foreign_key: :leader_id, class_name: "Follow"
+  has_many :leaders, through: :follower_follows, source: :leader
+  has_many :follower_follows, foreign_key: :follower_id, class_name: "Follow"
+
   has_secure_password
   validates :username, uniqueness: true, presence: true
   validates :real_name, presence: true
