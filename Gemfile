@@ -10,7 +10,7 @@ gem 'sinatra-flash', require: 'sinatra/flash'
 gem 'rake'
 gem 'bcrypt'
 
-group :development do
+group :development, :test do
   gem 'pry'
 end
 
