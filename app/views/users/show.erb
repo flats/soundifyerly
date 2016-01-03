@@ -45,13 +45,13 @@
 <div class="show-actions">
   <% if current_user == @user %>
   <a href="/sounds/new" class="button-link">Create a new sound</a><br>
-  <% else %>
+  <% elsif !@user.followers.include?(current_user) %>
   <a href="/users/<%= @user.username %>/follow" class="button-link">Follow this user</a><br>
   <% end %>
 </div>
 <% end %>
 
-<% if @leaders %>
+<% if current_user == @user && @leaders %>
 <h3>Sounds Created by People You're Following</h3>
 <table>
     <thead>
@@ -83,7 +83,7 @@
 </table>
 <% end %>
 
-<h3>Your Account</h3>
+<h3>Account Details</h3>
 
 <p>
   Username: <%= @user.username %><br>
