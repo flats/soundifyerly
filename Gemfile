@@ -9,10 +9,11 @@ gem 'sinatra-activerecord', require: 'sinatra/activerecord'
 gem 'sinatra-flash', require: 'sinatra/flash'
 gem 'rake'
 gem 'bcrypt'
+gem 'pry'
 
-group :development, :test do
-  gem 'pry'
-end
+# group :development, :test do
+#   gem 'pry'
+# end
 
 group :test do
   gem 'capybara'

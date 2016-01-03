@@ -58,6 +58,8 @@ class UsersController < ApplicationController
 
   get '/:username' do
     @user = User.includes(:sounds).find_by(username: params[:username])
+    @leaders = @user.leaders.includes(:sounds) unless @user.leaders.empty?
+    @followers = @user.followers unless @user.followers.empty?
     if @user
       erb :'users/show'
     else
@@ -89,6 +91,19 @@ class UsersController < ApplicationController
       erb :'users/edit'
     else
       404
+    end
+  end
+
+  get '/:username/follow' do
+    @user = User.find_by(username: params[:username])
+    if logged_in?
+      unless current_user.leaders.include?(@user)
+        @user.followers << current_user
+      end
+      redirect "/users/#{current_user.username}"
+    else
+      flash[:alert] = "You have to log in before following another user."
+      redirect '/users/login'
     end
   end
 
