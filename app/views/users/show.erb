@@ -9,7 +9,11 @@
 <% end %>
 
 <% if @user.sounds.empty? %>
+  <% if logged_in? && current_user == @user %>
 <p>You don't have any sounds yet. <a href="/sounds/new">Create a sound</a>.</p>
+  <% else %>
+<p><%= @user.username %> doesn't have any sounds yet.</p>
+  <% end %>
 <% else %>
 <table>
     <thead>
