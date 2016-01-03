@@ -2,7 +2,11 @@
 <h4 id="flash"<%= ' class="success"' if flash[:success] %>><%= flash[:alert] %></h4>
 <% end %>
 
+<% if logged_in? && current_user == @user %>
 <h3>Your Sounds</h3>
+<% else %>
+<h3><%= @user.username %>'s Sounds</h3>
+<% end %>
 
 <% if @user.sounds.empty? %>
 <p>You don't have any sounds yet. <a href="/sounds/new">Create a sound</a>.</p>
@@ -33,9 +37,15 @@
 </table>
 <% end %>
 
+<% if logged_in? %>
 <div class="show-actions">
+  <% if current_user == @user %>
   <a href="/sounds/new" class="button-link">Create a new sound</a><br>
+  <% else %>
+  <a href="/user/<%= @user.username %>/follow" class="button-link">Follow this user</a><br>
+  <% end %>
 </div>
+<% end %>
 
 <h3>Your Account</h3>
 
