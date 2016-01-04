@@ -8,10 +8,15 @@
 
 <h3><a href="/<%= @sound.public_file_path %>"><%= @sound.soundfile %></a></h3>
 
+<% if logged_in? %>
 <div class="show-actions">
+  <% if current_user == @sound.user %>
   <a href="/sounds/<%= @sound.id %>/edit" class="button-link">Edit this sound</a><br>
+  <a href="/users/<%= current_user.username %>" class="button-link">Back to profile</a><br>
   <form action="/sounds/<%= @sound.id %>" method="post" class="delete-form">
     <input type="hidden" name="_method" value="DELETE">
     <input type="submit" name="" value="Delete this sound">
   </form>
+  <% end %>
 </div>
+<% end %>

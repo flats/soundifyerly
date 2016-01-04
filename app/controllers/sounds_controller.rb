@@ -31,7 +31,7 @@ class SoundsController < ApplicationController
   end
 
   get '/:id' do
-    @sound = Sound.find(params[:id])
+    @sound = Sound.includes(:user).find(params[:id])
     erb :'sounds/show'
   end
 
