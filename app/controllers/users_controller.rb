@@ -79,6 +79,7 @@ class UsersController < ApplicationController
     @user = User.find_by(username: params[:username])
     if @user
       @user.destroy
+      session.clear
       redirect '/users/'
     else
       404

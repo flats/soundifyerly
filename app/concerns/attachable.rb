@@ -26,7 +26,7 @@ module Attachable
   end
 
   def mime_type
-    `file --brief --mime-type #{self.file_path}`.strip
+    `file --brief --mime-type "#{self.file_path}"`.strip
   end
 
   private
