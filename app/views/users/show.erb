@@ -51,7 +51,7 @@
 </div>
 <% end %>
 
-<% if current_user == @user && @leaders %>
+<% if logged_in? && current_user == @user && @leaders %>
 <h3>Sounds Created by People You're Following</h3>
 <table>
     <thead>
